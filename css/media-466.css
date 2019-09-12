@@ -1,0 +1,43 @@
+@media (max-width: 466px) {
+  html {
+    font-size: 11px; }
+  .heading .container .heading-title {
+    font-size: 2rem; }
+  .design-responsive {
+    height: 400px; }
+    .design-responsive-triangle {
+      left: -100px; }
+    .design-responsive .container .design-responsive-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      margin: 0; }
+    .design-responsive-macbook {
+      display: none; }
+  .registration-form {
+    height: 500px; }
+    .registration-form-block-form {
+      flex-wrap: wrap; }
+      .registration-form-block-form .input {
+        width: 100%;
+        margin: 5px 0; }
+      .registration-form-block-form-wrap {
+        width: 100%;
+        margin-top: 50px; }
+        .registration-form-block-form-wrap-pop {
+          width: 50%;
+          top: -40px;
+          text-align: left;
+          padding-left: 10px; }
+  .new-features {
+    height: 400px; }
+  .footer-block {
+    display: flex;
+    justify-content: center; }
+    .footer-block-column {
+      width: 60%; }
+      .footer-block-column:first-child, .footer-block-column:last-child {
+        width: 70%; }
+      .footer-block-column:nth-child(2) {
+        padding-left: 0px; } }

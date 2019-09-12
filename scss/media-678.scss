@@ -1,0 +1,108 @@
+@media (max-width: 678px) {
+    html {
+        font-size: 14px;
+    }
+
+    .heading{
+        &-player{
+            margin-top: 5px;
+        }
+
+        &-button{
+            margin-top: 5px;
+            width: 100px;
+            height: 20px;
+        }
+        
+        &-text{
+            display: none;
+        }
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    .new-design {
+        .container {
+            @include flex-description($justify: center);
+
+            .new-design-block {
+                width: 90%;
+                text-align: center;
+            }
+        }
+    }
+
+    .some-features {
+        height: 750px;
+
+        .container {
+            .some-features-content {
+                height: 100%;
+                text-align: center;
+
+                &-paragraph {
+                    @include flex-description($direction: column, $wrap: wrap);
+                    margin-top: 10px;
+
+                    &-item {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .comments {
+        height: auto;
+
+        .container {
+            padding-top: 20px;
+
+            .logo-block {
+                margin: 2% auto 20px;
+                width: 100%;
+                height: 49px;
+
+                &-item {
+                    width: 15%;
+                    height: auto;
+                }
+            }
+
+            .comments-block {
+                @include flex-description($direction: column, $wrap: wrap);
+
+                &-item {
+                    width: 80%;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+
+    .new-features {
+        height: 500px;
+    }
+
+    .footer {
+        &-block {
+            width: 100%;
+
+            &-column {
+                width: 50%;
+                text-align: center;
+
+                &:first-child,
+                &:last-child {
+                    width: 50%;
+                }
+
+                &:nth-child(3) {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

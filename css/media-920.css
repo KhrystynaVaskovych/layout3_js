@@ -1,0 +1,9 @@
+@media (max-width: 920px) {
+  .comments .container .logo-block {
+    width: 100%; }
+  .new-design {
+    height: 645px; }
+    .new-design-bg-grey {
+      width: 100%; }
+    .new-design .container .new-design-block {
+      width: 100%; } }
