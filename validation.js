@@ -1,26 +1,29 @@
 const getId = (id) => document.getElementById(id);
-const inputsArray = Array.from(document.getElementsByClassName('input'));
-const nameCheck = /[a-zA-Z]+\s{1}[a-zA-Z]+/;
+const inputData =[...document.getElementsByClassName('input')];
+const nameCheck = /[a-zA-Z]+/;
 const emailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 const passCheck = /(?=^.{6,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/;
+const disabledState = 'disabled';
 
-function test(name, email, pass) {
-  if ((nameCheck.test(name)) &&
-    (emailCheck.test(email)) &&
-    (passCheck.test(pass))) {
-    getId('sendData').classList.remove('disabled');
+function test(userData) {
+  if ((nameCheck.test(userData.name)) &&
+    (emailCheck.test(userData.email)) &&
+    (passCheck.test(userData.password))) {
+    getId('sendData').classList.remove(disabledState);
+  } else{
+    getId('sendData').classList.add(disabledState)
   }
 }
 
 const validation = {
     init: () => {
-        inputsArray.forEach((element) => {
+      inputData.forEach(element => {
             element.onchange = () => {
-              const inputName = getId('name').value;
-              const inputEmail = getId('email').value;
-              const inputPass = getId('password').value;
-          
-              test(inputName, inputEmail, inputPass);
+              const name = getId('name').value;
+              const email = getId('email').value;
+              const password = getId('password').value;
+              
+              test({name, email, password});
             };
           });
     }

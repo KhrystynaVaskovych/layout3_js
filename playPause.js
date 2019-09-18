@@ -1,24 +1,27 @@
 const getId = (id) => document.getElementById(id);
+const video = getId('video');
+const videoStatePicture = getId('videoImage');
+const statePictures = {
+  pause: './img/pause-button.png',
+  play: './img/play-button.png'
+};
 
-function toggle() {
-    const video = getId('video');
-    if (video.paused) {
-      video.play();
-      getId('videoImage').src = './img/pause-button.png';
-    } else {
-      video.pause();
-      getId('videoImage').src = './img/play-button.png';
-    }
+function toggleVideoState() {
+  if (video.paused) {
+    video.play();
+    videoStatePicture.src = statePictures.pause;
+  } else {
+    video.pause();
+    videoStatePicture.src = statePictures.play;
   }
+}
 
 const playPause = {
-    init: () => {
-        getId('toggleState').onclick = () => {
-            toggle();
-        }
+  init: () => {
+    getId('toggleStateButton').onclick = () => {
+      toggleVideoState();
     }
+  }
 }
 
 export default playPause;
-
-
